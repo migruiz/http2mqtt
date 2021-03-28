@@ -9,7 +9,7 @@ http.createServer((request, response) => {
   }).on('data', (chunk) => {
     rawbody.push(chunk);
   }).on('end', async () => {
-    rawbody = Buffer.concat(body).toString();
+    rawbody = Buffer.concat(rawbody).toString();
     console.log("rawbody",rawbody)
     const jsonData = JSON.parse(rawbody)
     
